@@ -21,13 +21,14 @@ CFLAGS		=	-Wall -Wextra -Werror
 all: $(NAME)
 
 $(OBJ_DIR)/%.o: %.c
+	@mkdir -p  $(OBJ_DIR) $(OBJ_DIR)$(SRCS_DIR)
 	cc $(CFLAGS) -c $< -o $@
 
 $(NAME): $(HEADER) $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJS) $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(NAME)
