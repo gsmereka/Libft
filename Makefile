@@ -1,6 +1,6 @@
 NAME    	= libft.a
 
-SRCS_DIR	=	./src
+SRCS_DIR	=	/src
 
 SRCS    	= 	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 				ft_isprint.c ft_strlen.c ft_strncmp.c ft_strlcpy.c \
@@ -12,7 +12,7 @@ SRCS    	= 	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 
 HEADER		=	./header/libft.h
 
-OBJS    	=	$(addprefix $(SRCS_DIR)/,$(SRCS:.c=.o))
+OBJS    	=	$(addprefix $(OBJ_DIR), $(addprefix $(SRCS_DIR)/, $(SRCS:.c=.o)))
 
 OBJ_DIR		=	./obj
 
@@ -20,10 +20,10 @@ CFLAGS		=	-Wall -Wextra -Werror
 
 all: $(NAME)
 
-.c.o: $(HEADER)
+$(OBJ_DIR)/%.o: %.c
 	cc $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJS) 
+$(NAME): $(HEADER) $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
 clean:
