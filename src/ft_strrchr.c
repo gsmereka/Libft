@@ -6,7 +6,7 @@
 /*   By: gsmereka <gsmereka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 03:31:02 by gsmereka          #+#    #+#             */
-/*   Updated: 2022/12/23 23:24:38 by gsmereka         ###   ########.fr       */
+/*   Updated: 2022/12/24 00:59:46 by gsmereka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
+
 	if (!s)
 		return (NULL);
 	i = ft_strlen(s);

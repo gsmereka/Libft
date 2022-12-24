@@ -6,36 +6,61 @@
 /*   By: gsmereka <gsmereka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 21:55:25 by gsmereka          #+#    #+#             */
-/*   Updated: 2022/12/24 00:44:45 by gsmereka         ###   ########.fr       */
+/*   Updated: 2022/12/24 17:28:14 by gsmereka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/libft.h"
 
-static size_t	ft_calculate_str_size(int n);
-static size_t	is_negative(int n);
-static char		*make_str(char *str, int n, size_t digit);
+static size_t	ft_calculate_size(int n);
+static char		*set_str(int is_negative, size_t str_size, int n);
 
 char	*ft_itoa(int n)
 {
 	char	*str;
-	size_t	size;
+	int		is_negative;
+	size_t	str_size;
 
 	if (n <= -2147483648)
 		return (ft_strdup("-2147483648"));
 	if (n == 0)
 		return (ft_strdup("0"));
-	size = ft_calculate_str_size(n);
-	if (is_negative(n))
-		size++;
-	str = (char *)malloc((size + 1) * sizeof(char));
-	if (!str)
-		return (NULL);
-	str = make_str(str, n, size);
+	if (n < 0)
+		is_negative = 1;
+	else
+		is_negative = 0;
+	if (is_negative)
+		n = n * (-1);
+	str_size = ft_calculate_size(n);
+	if (is_negative)
+		str_size++;
+	str = set_str(is_negative, str_size, n);
 	return (str);
 }
 
-static size_t	ft_calculate_str_size(int n)
+static char	*set_str(int is_negative, size_t str_size, int n)
+{
+	size_t		limit;
+	char		*str;
+
+	str = (char *)ft_calloc((str_size + 1), sizeof(char));
+	if (!str)
+		return (NULL);
+	limit = 0;
+	if (is_negative)
+		limit = 1;
+	if (is_negative)
+		str[0] = '-';
+	while (str_size > limit)
+	{
+		str[str_size - 1] = (n % 10) + '0';
+		n = n / 10;
+		str_size--;
+	}
+	return (str);
+}
+
+static size_t	ft_calculate_size(int n)
 {
 	size_t	i;
 
@@ -46,32 +71,4 @@ static size_t	ft_calculate_str_size(int n)
 		i++;
 	}
 	return (i);
-}
-
-static size_t	is_negative(int n)
-{
-	if (n < 0)
-		return (1);
-	return (0);
-}
-
-static char	*make_str(char *str, int n, size_t digit)
-{
-	size_t	first_char;
-
-	first_char = 0;
-	if (n < 0)
-	{
-		str[0] = '-';
-		first_char = 1;
-		n = -n;
-	}
-	while (digit > first_char)
-	{
-		str[digit - 1] = (n % 10) + '0';
-		n = n / 10;
-		digit--;
-	}
-	str[digit] = '\0';
-	return (str);
 }
