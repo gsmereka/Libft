@@ -6,7 +6,7 @@
 /*   By: gsmereka <gsmereka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 06:39:04 by gsmereka          #+#    #+#             */
-/*   Updated: 2022/12/23 20:02:54 by gsmereka         ###   ########.fr       */
+/*   Updated: 2022/12/24 00:40:20 by gsmereka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*s_char;
 
+	if (!s)
+		return (NULL);
 	s_char = (unsigned char *)s;
 	while (n > 0)
 	{

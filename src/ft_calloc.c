@@ -6,7 +6,7 @@
 /*   By: gsmereka <gsmereka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 00:44:08 by gsmereka          #+#    #+#             */
-/*   Updated: 2022/12/23 20:02:54 by gsmereka         ###   ########.fr       */
+/*   Updated: 2022/12/23 23:30:32 by gsmereka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	real_size = nmemb * size;
 	if (real_size == 0 || real_size / size != nmemb)
 		return (NULL);
-	p = malloc(nmemb * size);
+	p = malloc(real_size);
 	if (!p)
 		return (NULL);
-	ft_bzero(p, nmemb * size);
+	ft_bzero(p, real_size);
 	return (p);
 }

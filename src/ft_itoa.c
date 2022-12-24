@@ -6,13 +6,36 @@
 /*   By: gsmereka <gsmereka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 21:55:25 by gsmereka          #+#    #+#             */
-/*   Updated: 2022/12/23 20:02:54 by gsmereka         ###   ########.fr       */
+/*   Updated: 2022/12/24 00:44:45 by gsmereka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/libft.h"
 
-static size_t	ft_calculate_size(int n)
+static size_t	ft_calculate_str_size(int n);
+static size_t	is_negative(int n);
+static char		*make_str(char *str, int n, size_t digit);
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	size_t	size;
+
+	if (n <= -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n == 0)
+		return (ft_strdup("0"));
+	size = ft_calculate_str_size(n);
+	if (is_negative(n))
+		size++;
+	str = (char *)malloc((size + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	str = make_str(str, n, size);
+	return (str);
+}
+
+static size_t	ft_calculate_str_size(int n)
 {
 	size_t	i;
 
@@ -32,30 +55,23 @@ static size_t	is_negative(int n)
 	return (0);
 }
 
-char	*ft_itoa(int n)
+static char	*make_str(char *str, int n, size_t digit)
 {
-	char	*str;
-	size_t	size;
-	size_t	sign;
+	size_t	first_char;
 
-	if (n <= -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n == 0)
-		return (ft_strdup("0"));
-	sign = is_negative(n);
-	size = ft_calculate_size(n) + sign;
-	str = (char *)malloc((size + 1) * sizeof(char));
-	if (!str)
-		return (NULL);
-	str[0] = '-';
-	str[size] = '\0';
+	first_char = 0;
 	if (n < 0)
-		n = -n;
-	while (size > sign)
 	{
-		str[size - 1] = (n % 10) + '0';
-		n = n / 10;
-		size--;
+		str[0] = '-';
+		first_char = 1;
+		n = -n;
 	}
+	while (digit > first_char)
+	{
+		str[digit - 1] = (n % 10) + '0';
+		n = n / 10;
+		digit--;
+	}
+	str[digit] = '\0';
 	return (str);
 }
