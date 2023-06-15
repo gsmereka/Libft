@@ -8,23 +8,23 @@ Esta biblioteca foi desenvolvida em ambiente **Linux** e contém um conjunto de 
 
 ## Como Utilizar a Libft em seu projeto ?
 
-1. Verifique as [Dependencias](#dependencias).
+1. Verifique as [Dependências](#dependências).
 1. Clone o Repósitorio.
 	- ```git clone https://github.com/gsmereka/Libft.git```
 1. Compile a biblioteca.
 	- cd libft.
 	- make.
-1. Inclua o cabeçalho da libft no cabeçalho do seu projeto, exemplo:
+1. Inclua o cabeçalho da libft no cabeçalho do seu projeto. Você pode fazer isso adicionando a seguinte linha ao início do arquivo:
 	- ```#include libtf/header/libft.h```
 1. Compile seu projeto incluindo o arquivo libft.a, exemplo:
-	- ```gcc seu_projeto.c libft/libft.a``` 
+	- ```gcc seu_projeto.c Libft/libft.a -o seu_projeto``` 
 
-## Dependencias
+## Dependências
 
 - ```sudo apt-get update```
 - bibliotecas
-	- ```sudo apt-get install libc6-dev```
+	- ```sudo apt-get install build-essential```
 - Makefile
 	- ```sudo apt-get install make```
 - gcc
-	- ```sudo apt-get install build-essential```
+	- ```sudo apt-get install gcc```
