@@ -1,4 +1,7 @@
 # 42_libtf
-Standard functions C library
 
-This library contains a set of standard functions in C that were implemented and tested by me. The functions were chosen based on their usefulness and frequency of use in C projects. In addition to learning about the operation of these functions, the goal of this project was to create a useful library that can be used and enhanced in future projects at 42 SP.
+## Português | [English](./README_en.md)
+
+Bliblioteca de funções em C.
+
+Esta biblioteca contém um conjunto de funções padrão em C que foram implementadas e testadas por mim. As funções foram escolhidas com base em sua utilidade e frequência de uso em projetos em C. Além de aprender sobre o funcionamento dessas funções, o objetivo deste projeto foi criar uma biblioteca útil que possa ser utilizada e aprimorada em projetos futuros na 42 SP.
