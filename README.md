@@ -4,6 +4,15 @@
 
 ## Bliblioteca de funções em C.
 
+## índice
+
+1. [Sobre o projeto](#sobre-o-projeto)
+1. [Como Utilizar a Libft em seu projeto ?](#como-utilizar-a-libft-em-seu-projeto)
+1. [Dependências](#dependências)
+1. [Funções](#funções)
+
+## Sobre o Projeto
+
 Esta biblioteca foi desenvolvida em ambiente **Linux** e contém um conjunto de funções padrão em **C** que foram implementadas e testadas por mim. Além de aprender sobre o funcionamento dessas funções, o objetivo deste projeto foi criar uma biblioteca útil que possa ser utilizada e aprimorada em outros projetos, incluindo futuros projetos da **[42 SP](https://github.com/gsmereka/42_Projects)**.
 
 ## Como Utilizar a Libft em seu projeto ?
@@ -29,7 +38,7 @@ Esta biblioteca foi desenvolvida em ambiente **Linux** e contém um conjunto de 
 - gcc
 	- ```sudo apt-get install gcc```
 
-## Funções.
+## Funções
 
 | Função      | Descrição                                                                      |
 | ----------- | ------------------------------------------------------------------------------ |
