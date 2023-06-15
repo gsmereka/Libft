@@ -38,4 +38,7 @@ re: fclean all
 git: fclean
 	git add . && clear && git status
 
+push:
+	git add . && clear && git status && git commit -m "fast att" && git push
+
 .PHONY: all clean fclean re git
