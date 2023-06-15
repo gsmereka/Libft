@@ -28,3 +28,36 @@ Esta biblioteca foi desenvolvida em ambiente **Linux** e contém um conjunto de 
 	- ```sudo apt-get install make```
 - gcc
 	- ```sudo apt-get install gcc```
+
+## Funções.
+
+| Função      | Descrição                                                                      |
+| ----------- | ------------------------------------------------------------------------------ |
+| ft_atoi     | Converte uma string em um valor inteiro.                                       |
+| ft_isalpha  | Verifica se um caractere é uma letra do alfabeto.                              |
+| ft_itoa     | Converte um número inteiro em uma string.                                      |
+| ft_memmove  | Copia uma área de memória sobrepondo-se de forma segura.                       |
+| ft_putnbr_fd| Escreve um número inteiro em um descritor de arquivo.                          |
+| ft_strdup   | Cria uma cópia de uma string.                                                  |
+| ft_strlcpy  | Copia uma string com um tamanho especificado.                                  |
+| ft_strnstr  | Localiza a primeira ocorrência de uma substring em uma string com tamanho limitado. |
+| ft_tolower  | Converte um caractere para minúsculo, se aplicável.                            |
+| ft_bzero    | Preenche uma área de memória com zeros.                                        |
+| ft_isascii  | Verifica se um caractere é um valor ASCII válido.                              |
+| ft_memchr   | Procura por uma ocorrência de um byte em uma área de memória.                  |
+| ft_memset   | Preenche uma área de memória com um byte específico.                           |
+| ft_putstr_fd| Escreve uma string em um descritor de arquivo.                                 |
+| ft_striteri | Aplica uma função a cada caractere de uma string.                              |
+| ft_strlen   | Calcula o comprimento de uma string.                                           |
+| ft_strrchr  | Localiza a última ocorrência de um caractere em uma string.                     |
+| ft_toupper  | Converte um caractere para maiúsculo, se aplicável.                            |
+| ft_calloc    | Aloca memória e inicializa com zeros.                                             |
+| ft_isalnum   | Verifica se um caractere é alfanumérico.                                           |
+| ft_isdigit   | Verifica se um caractere é um dígito decimal.                                      |
+| ft_memcpy    | Copia uma área de memória.                                                        |
+| ft_putendl_fd | Escreve uma string seguida de uma nova linha em um descritor de arquivo.           |
+| ft_split     | Divide uma string em substrings com base em um caractere delimitador.              |
+| ft_strchr    | Localiza a primeira ocorrência de um caractere em uma string.                      |
+| ft_strlcat   | Concatena duas strings de forma segura, evitando estouro de buffer.                |
+| ft_strncmp   | Compara os primeiros caracteres de duas strings até um tamanho especificado.       |
+| ft_substr    | Extrai uma substring de uma string, com base em um índice inicial e um tamanho.    |
